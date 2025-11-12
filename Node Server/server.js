@@ -44,6 +44,45 @@ app.post("/postContect", async (req, res) => {
     res.sendStatus(200);
 });
 
+const htmlString = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Server Error</title>
+  <style>
+    body {
+      background-color: #f6f6f6;
+      padding: 0px 20px 0px 20px;
+      color: #2a2a2a;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3em;
+      font-weight: 700;
+      margin-bottom: 0.5em;
+    }
+    p {
+      font-size: 1.2em;
+      color: #747474ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>It's not you, it's us.</h1>
+  <p>API server error (Read our documentation to enter valid data.)</p>
+</body>
+</html>
+`;
+
 app.post("/predict", (req, res) => {
     const data = req.body;
 
@@ -66,7 +105,7 @@ app.post("/predict", (req, res) => {
         })
         .catch((error) => {
             console.log(error);
-            res.sendStatus(512);
+            res.status(500).send(htmlString);
 
         });
 });

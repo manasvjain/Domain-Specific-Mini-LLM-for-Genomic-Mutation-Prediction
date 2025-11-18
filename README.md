@@ -117,7 +117,7 @@ Contributions are welcome! Please open an issue or submit a pull request.
 
 ## Author
 
-**Ankit Ahirwar**
+MANASV JAIN
 
 * [Twitter](https://x.com/Ankit6174)
 * [Medium](https://medium.com/@ankit6174)
